@@ -1,0 +1,29 @@
+{
+  "input": "outputs_paper/calib/eaq_calib.jsonl",
+  "seed": 20260518,
+  "probe_total": 64,
+  "test_total": 192,
+  "probe": "outputs_paper/calib/eaq_ebs_probe.jsonl",
+  "test": "outputs_paper/calib/eaq_ebs_test.jsonl",
+  "probe_label_counts": {
+    "sad": 8,
+    "comfort_need": 8,
+    "lonely": 8,
+    "happy": 8,
+    "tired_low": 8,
+    "neutral": 8,
+    "anxious": 8,
+    "angry": 8
+  },
+  "test_label_counts": {
+    "angry": 24,
+    "comfort_need": 24,
+    "neutral": 24,
+    "tired_low": 24,
+    "lonely": 24,
+    "sad": 24,
+    "happy": 24,
+    "anxious": 24
+  },
+  "note": "Use ebs_probe only for BehaviorDrop/EBS allocation, and ebs_test only for final reported task metrics."
+}

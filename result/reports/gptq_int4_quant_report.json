@@ -1,0 +1,6 @@
+{
+  "tag": "gptq_int4",
+  "backend": "external_hf_quantized_model",
+  "model": "outputs_paper/quant_baselines/models/gptq_int4",
+  "avg_bits_per_linear_param": 4.0
+}

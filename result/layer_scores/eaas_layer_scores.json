@@ -1,0 +1,182 @@
+[
+  {
+    "name": "layers.16",
+    "score": 163254.00956145633,
+    "normalized_score": 0.049024056931054126,
+    "rank": 1
+  },
+  {
+    "name": "layers.10",
+    "score": 160282.19157039397,
+    "normalized_score": 0.048131640415380574,
+    "rank": 2
+  },
+  {
+    "name": "layers.17",
+    "score": 156404.95180844225,
+    "normalized_score": 0.046967331965402113,
+    "rank": 3
+  },
+  {
+    "name": "layers.9",
+    "score": 153828.78916732536,
+    "normalized_score": 0.04619372803174665,
+    "rank": 4
+  },
+  {
+    "name": "layers.15",
+    "score": 153110.09140645358,
+    "normalized_score": 0.045977908034186735,
+    "rank": 5
+  },
+  {
+    "name": "layers.11",
+    "score": 152677.4704645545,
+    "normalized_score": 0.0458479949389911,
+    "rank": 6
+  },
+  {
+    "name": "layers.12",
+    "score": 150239.95333971753,
+    "normalized_score": 0.04511602530088281,
+    "rank": 7
+  },
+  {
+    "name": "layers.13",
+    "score": 148907.07004272164,
+    "normalized_score": 0.04471576960848109,
+    "rank": 8
+  },
+  {
+    "name": "layers.8",
+    "score": 147554.9828838219,
+    "normalized_score": 0.044309747128349015,
+    "rank": 9
+  },
+  {
+    "name": "layers.7",
+    "score": 145710.44846457557,
+    "normalized_score": 0.04375584612081278,
+    "rank": 10
+  },
+  {
+    "name": "layers.14",
+    "score": 145435.46243485156,
+    "normalized_score": 0.043673269706226404,
+    "rank": 11
+  },
+  {
+    "name": "layers.18",
+    "score": 134382.49372902495,
+    "normalized_score": 0.04035413917738251,
+    "rank": 12
+  },
+  {
+    "name": "layers.19",
+    "score": 129847.59213885607,
+    "normalized_score": 0.03899233940088467,
+    "rank": 13
+  },
+  {
+    "name": "layers.6",
+    "score": 127240.13170607673,
+    "normalized_score": 0.03820933695552099,
+    "rank": 14
+  },
+  {
+    "name": "layers.0",
+    "score": 121777.57695573289,
+    "normalized_score": 0.03656896931132512,
+    "rank": 15
+  },
+  {
+    "name": "layers.20",
+    "score": 119365.16417755492,
+    "normalized_score": 0.03584453833596168,
+    "rank": 16
+  },
+  {
+    "name": "layers.4",
+    "score": 111325.89688621147,
+    "normalized_score": 0.03343040162695534,
+    "rank": 17
+  },
+  {
+    "name": "layers.5",
+    "score": 104307.4309720259,
+    "normalized_score": 0.031322804554944864,
+    "rank": 18
+  },
+  {
+    "name": "layers.21",
+    "score": 103232.42088312579,
+    "normalized_score": 0.030999986414420984,
+    "rank": 19
+  },
+  {
+    "name": "layers.3",
+    "score": 101572.71745778015,
+    "normalized_score": 0.030501588883901646,
+    "rank": 20
+  },
+  {
+    "name": "layers.2",
+    "score": 97940.72850899899,
+    "normalized_score": 0.029410927567366085,
+    "rank": 21
+  },
+  {
+    "name": "layers.1",
+    "score": 90728.55495728448,
+    "normalized_score": 0.027245161423271505,
+    "rank": 22
+  },
+  {
+    "name": "layers.22",
+    "score": 78223.87723355286,
+    "normalized_score": 0.023490092654795527,
+    "rank": 23
+  },
+  {
+    "name": "layers.27",
+    "score": 71631.60907304997,
+    "normalized_score": 0.02151047983870963,
+    "rank": 24
+  },
+  {
+    "name": "layers.23",
+    "score": 67342.31762663263,
+    "normalized_score": 0.020222435100158268,
+    "rank": 25
+  },
+  {
+    "name": "layers.26",
+    "score": 67182.62578720771,
+    "normalized_score": 0.020174480738434336,
+    "rank": 26
+  },
+  {
+    "name": "layers.25",
+    "score": 61439.84504702513,
+    "normalized_score": 0.018449963155646946,
+    "rank": 27
+  },
+  {
+    "name": "layers.24",
+    "score": 56621.33108359345,
+    "normalized_score": 0.017002996532891942,
+    "rank": 28
+  },
+  {
+    "name": "embed_tokens",
+    "score": 7023.187659978867,
+    "normalized_score": 0.0021090149798168875,
+    "rank": 29
+  },
+  {
+    "name": "other",
+    "score": 1488.6293650269508,
+    "normalized_score": 0.0004470251660976674,
+    "rank": 30
+  }
+]

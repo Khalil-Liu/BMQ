@@ -1,0 +1,7 @@
+method,peft,quantization,avg_bits,linear_params_b,total_params_b,high_bit_linear_params_pct,linear_size_mb,hf_dir_size_mb,protected_layers,protected_layer_count,overall_tok_s,overall_ms_tok,negative_tok_s,negative_ms_tok,overall_output_tokens,negative_output_tokens,overall_tts,neg_match,bad_format,neg_retention
+FP16 Ref,EQ-DoRA,None,16.00,1.544,,100.00,2944.23,,,,67.15,15.26,67.61,14.96,54.5,60.8,0.359,0.167,0.641,1.000
+Uniform INT8,EQ-DoRA,RTN W8,8.00,1.544,,100.00,1472.12,,,,73.53,13.79,73.80,13.58,53.8,61.0,0.380,0.177,0.620,0.970
+Uniform INT4,EQ-DoRA,RTN W4,4.00,1.544,,0.00,736.06,,,,72.40,13.92,72.91,13.77,65.2,66.4,0.349,0.323,0.651,0.913
+GPTQ INT4,EQ-DoRA,GPTQ W4,4.00,1.544,0.409,0.00,736.06,16.05,,,45.73,22.14,45.99,21.83,53.4,57.2,0.365,0.177,0.635,0.885
+AWQ INT4,EQ-DoRA,AWQ W4,4.00,1.544,0.409,0.00,736.06,16.26,,,45.39,22.32,45.16,22.34,42.0,41.1,0.698,0.229,0.302,0.943
+BehaviorDrop k7,EQ-DoRA,RTN W4/W8,4.75,1.544,,18.72,873.87,,9 10 12 17 18 25 27,7,68.79,14.77,69.05,14.58,49.2,58.8,0.885,0.656,0.115,0.997
