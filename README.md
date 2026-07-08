@@ -174,8 +174,19 @@ python eval/evaluate_behavior_alignment.py \
   --csv outputs/behaviordrop_k7_behavior_alignment_summary.csv
 ```
 
+## 8. Paper Result Summary
+
+The lightweight result files under `result/` summarize the main paper evidence:
+
+- `result/tables/signal_ablation_summary.csv` records EAQ-Test behavior metrics for FP16, RTN, EAAS-only, EBS-fusion, and BehaviorDrop policies.
+- `result/tables/quant_baseline_summary.csv` records the GPTQ and AWQ INT4 baseline results.
+- `result/tables/random_layercount_summary.csv` records exact-layer-count random controls.
+- `result/tables/efficiency_cost_summary.csv` records the average bit budget, estimated linear size, compression ratio, and throughput summary.
+- `result/layer_scores/behavior_drop_layer_scores.csv` and `result/layer_scores/eaas_layer_scores.csv` provide the layer-ranking signals used in the diagnostic analysis.
+
+In the reported EAQ-Test setting, BehaviorDrop k=7 improves negative-emotion matching over AWQ INT4 from 0.23 to 0.66 and reduces bad-format rate from 0.30 to 0.11, while using a 4.75-bit W4/W8 mixed-precision policy. The result files are provided so readers can inspect the table values without rerunning the full pipeline.
 ## Notes on Exact Reproduction
 
 Exact numerical reproduction requires the same base model, merged EQ-DoRA checkpoint, decoding configuration, package versions, and GPU/runtime settings. The included `data/fp16_ref_response.jsonl` can be used to reproduce the layer-scoring and evaluation protocol once a compatible merged model is available.
 
-The code performs PyTorch-side fake quantization with dequantized weights. The reported bit budgets are controlled compression estimates, not deployment-time acceleration claims.
+
