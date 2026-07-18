@@ -1,18 +1,18 @@
-﻿# BehaviorDrop
+﻿# BMQ
 
-BehaviorDrop is a behavior-guided mixed-precision quantization pipeline for emotionally supportive companion LLMs. It selects high-precision MLP layers by measuring output-level behavior degradation caused by temporary INT4 perturbation.
+BMQ is a behavior-guided mixed-precision quantization pipeline for emotionally supportive companion LLMs. It selects high-precision MLP layers by measuring output-level behavior degradation caused by temporary INT4 perturbation.
 
-This package contains the core code and small data files needed to reproduce the main BehaviorDrop workflow.
+This package contains the core code and small data files needed to reproduce the main BMQ workflow.
 
 ## Directory
 
 ```text
-BehaviorDrop/
+BMQ/
   train.py                         # EQ-DoRA / LoRA / DoRA companion SFT training
   infer.py                         # PyTorch-side fake INT4/INT8/mixed-precision inference
-  compute_behavior_drop.py          # Layer-wise BehaviorDrop sensitivity scoring
+  compute_behavior_drop.py          # Layer-wise BMQ behavior-sensitivity scoring
   compute_eaas.py                   # EAAS gradient-saliency baseline
-  build_ebs_allocation.py           # EAAS/BehaviorDrop fusion and protected-layer export
+  build_ebs_allocation.py           # EAAS/BMQ fusion and protected-layer export
   common.py                         # Shared labels, JSONL utilities, normalization
 
   data/
@@ -44,7 +44,7 @@ Recommended hardware: one CUDA GPU with enough memory for Qwen2.5-1.5B-Instruct.
 
 The main evaluation protocol uses disjoint splits:
 
-- `data/eaq_ebs_probe.jsonl`: used only for BehaviorDrop / EAAS / EBS layer ranking.
+- `data/eaq_ebs_probe.jsonl`: used only for BMQ / EAAS / EBS layer ranking.
 - `data/eaq_ebs_test.jsonl`: used only for final reported EAQ-Test metrics.
 - `data/eaq_ebs_split_report.json`: records the split seed and label counts.
 
@@ -81,7 +81,7 @@ Merge the adapter into the base model with your preferred PEFT merge script, or 
 
 The package includes `data/fp16_ref_response.jsonl` for convenience. To regenerate it, run inference without quantization using your own generation script or adapt `infer.py` with a no-quantization path. The reference file must contain `id`, `text`, `label`, and `response` fields.
 
-## 3. Compute BehaviorDrop Layer Scores
+## 3. Compute BMQ Layer Scores
 
 ```bash
 python compute_behavior_drop.py \
@@ -125,7 +125,7 @@ python build_ebs_allocation.py \
   --budgets 4.75
 ```
 
-For pure BehaviorDrop k=7, use the top seven layers from `behavior_drop_layer_scores.csv` sorted by `behavior_drop_score`, and save them as a comma-separated file, for example:
+For pure BMQ k=7, use the top seven layers from `behavior_drop_layer_scores.csv` sorted by `behavior_drop_score`, and save them as a comma-separated file, for example:
 
 ```text
 outputs/allocation/behaviordrop_k7_layers.txt
@@ -178,15 +178,16 @@ python eval/evaluate_behavior_alignment.py \
 
 The lightweight result files under `result/` summarize the main paper evidence:
 
-- `result/tables/signal_ablation_summary.csv` records EAQ-Test behavior metrics for FP16, RTN, EAAS-only, EBS-fusion, and BehaviorDrop policies.
+- `result/tables/signal_ablation_summary.csv` records EAQ-Test behavior metrics for FP16, RTN, EAAS-only, EBS-fusion, and BMQ policies.
 - `result/tables/quant_baseline_summary.csv` records the GPTQ and AWQ INT4 baseline results.
 - `result/tables/random_layercount_summary.csv` records exact-layer-count random controls.
 - `result/tables/efficiency_cost_summary.csv` records the average bit budget, estimated linear size, compression ratio, and throughput summary.
 - `result/layer_scores/behavior_drop_layer_scores.csv` and `result/layer_scores/eaas_layer_scores.csv` provide the layer-ranking signals used in the diagnostic analysis.
 
-In the reported EAQ-Test setting, BehaviorDrop k=7 improves negative-emotion matching over AWQ INT4 from 0.23 to 0.66 and reduces bad-format rate from 0.30 to 0.11, while using a 4.75-bit W4/W8 mixed-precision policy. The result files are provided so readers can inspect the table values without rerunning the full pipeline.
+In the reported EAQ-Test setting, BMQ k=7 improves negative-emotion matching over AWQ INT4 from 0.23 to 0.66 and reduces bad-format rate from 0.30 to 0.11, while using a 4.75-bit W4/W8 mixed-precision policy. The result files are provided so readers can inspect the table values without rerunning the full pipeline.
 ## Notes on Exact Reproduction
 
 Exact numerical reproduction requires the same base model, merged EQ-DoRA checkpoint, decoding configuration, package versions, and GPU/runtime settings. The included `data/fp16_ref_response.jsonl` can be used to reproduce the layer-scoring and evaluation protocol once a compatible merged model is available.
+
 
 
